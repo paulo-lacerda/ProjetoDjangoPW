@@ -1,0 +1,23 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% extends 'base.html' %}
+
+{% block title%}Deletar Produto{% endblock %}
+
+{% block main %}
+
+
+
+	<form method="POST">
+	{% csrf_token %}
+ <div class="col-lg-12 text-center">
+ <br><br><br><br><br><br><br><br>
+ <p><h3>Deseja realmente deletar este produto?</h3></p>
+ 		<input class="btn btn-primary btn-small" type="button" value="Voltar" name="B3" onClick="javascript:history.back(1)">
+	 &nbsp&nbsp&nbsp&nbsp&nbsp
+	
+	<button class="btn btn-primary btn-small" type="submit">&nbsp&nbspSim&nbsp&nbsp</button>
+	
+	</div>
+	</form>	
+
+{% endblock %}

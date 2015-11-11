@@ -1,0 +1,52 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% extends 'base.html' %}
+{% load bootstrap %}
+{% block title%}Detalhes do Produto{% endblock %}
+
+{% block main %}
+
+
+
+<br>
+	<div class="panel panel-default">
+  <div class="panel-heading"><h3>Editar Informacoes do produto</h3></div>
+  </div>
+
+ID: {{object.id}}
+<br>
+Nome: {{object.nome}}
+<br>
+Distribuidor: {{object.distribuidor}}
+
+<br>
+
+Quantidade: {{object.quantidade}}
+
+<br>
+
+Preco Custo: {{object.precoCusto}}
+
+<br>
+
+
+<br>
+
+		<form method="POST">
+	{% csrf_token %}
+
+		{{form|bootstrap}}
+		
+	<p>
+	  <a class="btn btn-primary btn-small" href="{% url 'sistema_produto' %}" role="button">VOLTAR</a>
+	  <a class="btn btn-primary btn-small" href="{% url 'produto_delete' object.id %}" role="button">DELETAR</a>
+	  <button type="submit" class="btn btn-primary btn-small">SALVAR</button>
+	</p>
+		</form>	
+
+
+
+<br>
+
+
+
+{% endblock %}

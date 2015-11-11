@@ -1,0 +1,42 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+{% extends 'base.html' %}
+
+{% block title%}Produtos{% endblock %}
+
+{% block main %}
+
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h3>PRODUTOS CADASTRADOS</h3></div>
+
+  <!-- Table -->
+  <table class="table">
+
+{% for produto in lista_produtos %}
+
+
+	 <legend></legend>&nbsp {{produto.distribuidor.telefone}}&nbsp&nbsp<a href="{% url 'produto_update' produto.id %}">{{produto}}</a>
+
+
+
+
+
+
+{% endfor %}
+
+
+
+  </table>
+</div>
+
+
+
+
+
+
+
+
+&nbsp&nbsp&nbsp&nbsp<a class="btn btn-primary btn-small" href="{% url 'produto_create' %}" role="button">NOVO PRODUTO</a>
+
+{% endblock %}

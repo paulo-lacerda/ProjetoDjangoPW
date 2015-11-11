@@ -1,0 +1,42 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+{% extends 'base.html' %}
+
+{% block title%}Clientes{% endblock %}
+
+{% block main %}
+
+
+
+<div class="panel panel-default">
+  <!-- Default panel contents -->
+  <div class="panel-heading"><h3>CLIENTES CADASTRADOS </h3></div>
+
+  <!-- Table -->
+  <table class="table">
+
+{% for cliente in lista_clientes %}
+
+
+	 <legend></legend>&nbsp {{cliente.id}}&nbsp&nbsp<a href="{% url 'cliente_update' cliente.id %}">{{cliente}}</a>- <a href="{% url 'cliente_update' cliente.id %}">   {{cliente.cpf}}</a>
+
+
+
+
+
+
+{% endfor %}
+
+
+
+  </table>
+</div>
+
+
+
+
+
+
+&nbsp&nbsp&nbsp&nbsp<a class="btn btn-primary btn-small" href="{% url 'cliente_create' %}" role="button">NOVO CLIENTE</a>
+
+{% endblock %}
